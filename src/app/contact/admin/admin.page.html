@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>administration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-divider>
+    <ion-label class="titre">
+      <h2> Contact administration:</h2>
+    </ion-label>
+  </ion-item-divider>
+
+  <ion-card *ngFor="let administration of administrations">
+    <ion-text>
+      <h2> {{administration.prenom}} {{administration.nom}} </h2>
+      <p> {{administration.fonction}}</p>
+      <p><a href="tel:{{administration.telephone}}">  {{administration.telephone}}</a> </p>
+      <p><a href="mailto:{{administration.mail}}">  {{administration.mail}}</a> </p>
+    </ion-text>
+  </ion-card>
+
+</ion-content>

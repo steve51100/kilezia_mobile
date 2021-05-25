@@ -1,0 +1,19 @@
+@import '../../theme/app.scss';
+
+ion-item-divider{
+ @include diviser;
+ 
+}
+
+ion-text{
+    text-align: center;
+}
+ion-card{
+    border: 1px dashed black;
+    h2{
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

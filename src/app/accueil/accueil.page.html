@@ -1,0 +1,28 @@
+
+
+<ion-content>
+
+  <div class="logo">
+    <ion-icon  name="person-circle"></ion-icon>
+  </div>
+
+  <div class="blc">
+    <ion-label color="light">Email</ion-label>
+  <ion-item class="item">
+    <ion-input [(ngModel)]="dataUser.email" color="light" type="mail" placeholder="Adresse email"></ion-input>
+  </ion-item>
+  </div>
+  <div class="blc">
+    <ion-label color="light">Mot de passe</ion-label>
+  <ion-item class="item">
+    <ion-input [(ngModel)]="dataUser.password" color="light" type="password" placeholder="Mot de passe"></ion-input>
+  </ion-item>
+  </div>
+  
+  
+
+
+  <ion-button (click)="login()"  shape="round" expand="block">Connexion</ion-button>
+
+
+</ion-content>

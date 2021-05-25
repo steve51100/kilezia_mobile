@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>entreprises</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-divider>
+    <ion-label class="titre">
+      <h2> Liste des entreprises:</h2>
+    </ion-label>
+  </ion-item-divider>
+
+  <ion-card *ngFor="let entreprise of entreprises">
+    <ion-text>
+      <h2> {{entreprise.nom}} </h2>
+      <p> {{entreprise.numero}} {{entreprise.adresse}}</p>
+      <p>{{entreprise.cp}} {{entreprise.ville}}</p>
+    </ion-text>
+  </ion-card>
+
+</ion-content>

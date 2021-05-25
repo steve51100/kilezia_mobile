@@ -1,0 +1,31 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>note de service</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-divider>
+    <ion-label class="titre">
+      <h2>Liste des notes de services:</h2>
+    </ion-label>
+  </ion-item-divider>
+  
+  <ion-item *ngFor="let uploadPdf of uploadPdfs">
+    <ion-label> {{uploadPdf.name}} </ion-label>
+    
+    <ion-button expand="block" fill="clear">
+      <a href= '{{ uploadPdf.url }}' target="_blank"><ion-icon slot="end" color="success" title="voir" name="eye"></ion-icon></a>
+    </ion-button>
+  </ion-item>
+
+</ion-content>
+
+
+
+

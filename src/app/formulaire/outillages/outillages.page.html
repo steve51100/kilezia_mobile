@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Demande de <br />Materiel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="info">INFORMATION:</h2>
+  <p> Veuillez remplir tout les champs avant de valider votre demande.</p><br/>
+
+  <h2>Pour quel chantier avez-vous besoin de matériel ?</h2>
+  <ion-card>
+    <ion-select cancelText="annuler" okText="valider" [(ngModel)]="Entreprises">
+      <ion-select-option *ngFor="let entreprise of entreprises">{{entreprise.nom}}</ion-select-option>
+    </ion-select>
+  </ion-card>
+
+  <h2>De quel type de matériel avez-vous besoin?</h2>
+  <ion-card>
+    <ion-select multiple=true cancelText="annuler" okText="valider" [(ngModel)]="Materiels">
+      <ion-select-option>EPI</ion-select-option>
+      <ion-select-option>Outillages</ion-select-option>
+    </ion-select>
+  </ion-card>
+
+  <h2>Choisissez le nom votre déstinataire?</h2>
+  <ion-card>
+    <ion-select cancelText="annuler" okText="valider" [(ngModel)]="Destinataire" >
+      <ion-select-option *ngFor="let destinataire of destinataires">{{destinataire.nom}} {{destinataire.prenom}}</ion-select-option>
+    </ion-select>
+  </ion-card>
+
+  <h2>Choisissez l'adresse email votre déstinataire?</h2>
+  <ion-card>
+    <ion-select cancelText="annuler" okText="valider" [(ngModel)]="Mails" >
+      <ion-select-option *ngFor="let destinataire of destinataires">{{destinataire.mail}}</ion-select-option>
+    </ion-select>
+  </ion-card>
+
+  <h2>Déscriptions des besoins:</h2>
+  <ion-card class="area">
+    <ion-textarea [(ngModel)]="Descriptions" type="text" placeholder="ex: 1 bidon de nettoyage , 1 poste a souder tig"></ion-textarea>
+  </ion-card>
+
+  <p>Pour valider votre demande:<br/>
+    1) Remplir tout les information<br/>
+    2) Cliquer sur Crée envoyer<br/>
+    4) Vous allez être rediriger vers votre boite d'envoi.</p>
+
+  <ion-button (click)="send()"  expand="block"  shape="round">
+    Envoyer 
+   </ion-button>
+
+
+
+</ion-content>

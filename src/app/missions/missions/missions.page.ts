@@ -26,9 +26,6 @@ export class MissionsPage  {
   Taches = true;
 
   
-  
-  
-
   newTache: TacheDataModel = {
     nom: [],
     date: '',
@@ -37,7 +34,7 @@ export class MissionsPage  {
     termine: false
   };
   mission: MissionDataModel = new MissionDataModel();
-  missions:Observable<MissionDataModel[]>;
+  missions: MissionDataModel[] = [];
   items: string[];
   
   constructor(
@@ -52,7 +49,9 @@ export class MissionsPage  {
   ) {}
    // Récupérer la liste des missions quand on entre dans la peg
   ngOnInit(){
-    this.missions = this.missionDataService.getMissions();
+    this.missionDataService.getMissions().subscribe( missions =>{
+      this.missions = missions.filter(m => m.isActivated);
+    })
     
     
   }

@@ -14,7 +14,7 @@
     </ion-label>
   </ion-item-divider>
 
-  <ion-item *ngFor="let mission of (missions | async)">
+  <ion-item *ngFor="let mission of missions">
     <ion-label> <span>Entreprise:</span> {{mission.entreprise}} <br /><span>Mission du:</span> {{ mission.date }}
       
     </ion-label>
